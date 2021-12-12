@@ -1,7 +1,6 @@
 ---
 // Component Imports
 import BaseHead from '../components/BaseHead.astro';
-import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 
 interface MarkdownFrontmatter {
@@ -35,9 +34,6 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
 <html lang="en" class='font-sans'>
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
-    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')} >
-    <link rel="stylesheet" href={Astro.resolve('../styles/inter.css')} >
-    
 
     <style>
       #oxwash {
@@ -64,7 +60,7 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
           <ul class='list-disc text-lg pl-4 space-y-1 leading-relaxed text-gray-700 pt-2'>
             <li>At the moment I'm leading software engineering at <a id="oxwash" href="https://www.oxwash.com">Oxwash</a>, we're building the sustainable and scalable future of laundry.  </li>
             <li>I've worked in Ed Tech and Data Privacy, and I have Ph.D. in Education Technology.</li>
-            <li>I try to write at least once a month on my <a href="/blog" class="underline color-brand-orange")">Blog</a></li>
+            <li>I try to write at least once a month on my <a href="/blog" class="underline color-brand-orange">Blog</a></li>
             <li>I like good food and dry gin, long bike rides in the sun, well-written books, and lists.</li>
           </ul>
           

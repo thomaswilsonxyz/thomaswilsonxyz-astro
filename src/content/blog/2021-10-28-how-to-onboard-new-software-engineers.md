@@ -1,5 +1,4 @@
 ---
-
 title: "How to onboard new software engineers without paying high interest"
 author: "Thomas Wilson"
 date: 2021-10-28T16:03:00
