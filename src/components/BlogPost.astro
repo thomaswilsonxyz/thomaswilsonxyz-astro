@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title: string;
+  author: string;
+  date: string;
+}
+
+const { title, author, date } = Astro.props;
+---
+
+<div class="layout">
+    <header class='flex w-full flex-col items-center pt-4 pb-8'>
+    <div class="text-center pb-2">
+        <a href="/" class="text-lg underline" style="color: var(--colour-brand);">{author}</a>
+        <p class="publish-date">{Intl.DateTimeFormat().format(new Date(date))}</p>
+    </div>
+    <h1 class="text-6xl text-center" style="max-width:15ch;">{title}</h1>
+    </header>
+</div>

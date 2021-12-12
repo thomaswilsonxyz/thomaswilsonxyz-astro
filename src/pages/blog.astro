@@ -1,0 +1,54 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+
+interface BookReviewMarkdownFrontmatter {
+date: number;
+}
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Thomas Wilson';
+let description = 'Thomas Wilson is building software and engineering teams with socially responsible companies';
+let permalink = 'https://www.thomaswilson.xyz';
+
+// Data Fetching: List all Markdown posts in the repo.
+
+let allContent = Astro.fetchContent<BookReviewMarkdownFrontmatter>('../content/**/*.md');
+
+// allBlogPosts = allBlogPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+<html lang="en" class='font-sans'>
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')} >
+    <link rel="stylesheet" href={Astro.resolve('../styles/inter.css')} >
+  </head>
+
+  <body>
+    <div class="grid place-content-center">
+      <main class="max-w-2xl">
+        <section class="pt-8 pb-6 flex flex-col gap-y-4">
+        <a class="underline" href="/">Home</a>
+          <h1 class="text-3xl font-medium color-brand-orange">Blog</h1>
+          <p class="text-xl font-light">Hi, I like to write about building software, books I've read, and other things that catch my interest.</p>
+        </section>
+        <section aria-label="Blog post list">
+          <h2 class="text-xl pb-1">All Writing</h2>
+          <ul class="space-y-2">
+            {allContent.map(p => <BlogPostPreview post={p} />)}
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+

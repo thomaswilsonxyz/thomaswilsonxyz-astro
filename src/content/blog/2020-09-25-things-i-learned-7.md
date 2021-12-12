@@ -1,0 +1,26 @@
+---
+
+title: "Things I learned this week #7"
+author: "Thomas Wilson"
+date: 2020-09-25
+draft: false
+slug: "2020-09-25-things-i-learned-7"
+tags:
+  - things-i-learned
+---
+
+- **This unknown origin**: No one is quite certain where the term "rule of thumb" came from. It has been mistakenly attributed to a British Judge's rule that a man can beat his wife if the stick so long as it is less wide than his thumb, however there's no evidence to support that this ruling was ever made. ([source](https://freakonomics.com/2011/07/01/rule-of-thumb/))
+- **This heist**: The police recently seized about £2.5m worth of books which were originally stolen in 2017. How were they taken? The thieves cut holes into the roof of the warehouse near Heathrow Airport and (I don't see how this can't be true) hummed the Mission Impossible theme tune as they lowered themselves down on carbon fibre grappling hooks past motion sensors (that bit's actually true) all the way to original copies of books by Newton, Copernicus, and Galileo. The books were stolen by a Romanian crime gang, and found buried under a house in rural Romania. ([source](https://www.bbc.co.uk/news/world-europe-54209366))
+- **This thing about conspiracy theorists**: There's possibly an evolutionary reason behind conspiracy theories: people/groups of people who are more likely to believe others are maliciously conspiring against them are less likely to underestimate the power or potential of others. This may increase the survival rate of those who are more suspicious of others. This means that our disposition to believe in conspiracy theories may to some extent be favourable and innate. ([source](https://onlinelibrary.wiley.com/doi/pdf/10.1002/ejsp.2530))
+- **This thing about reading**: On average, people onlyy read about 20% of the content on any given web page. This study was done in 2008, and I couldn't easily find a more up-to-date revision. That means most people would only read _one_ of these five wonderful things I learned this week. ([source](https://www.nngroup.com/articles/how-little-do-users-read/))
+- **This Roman god**: Domitius is the Roman god who kept a woman in the house of her husband. His wife, Domiduca, protects children on the way back to their parents' house. Thanks for your service Domitius, but I think we can take it from here - you've had a good couple of thousand years, yeah? Domiduca, go take a spa weekend or something - go somewhere outside the house and without children. ([source](https://en.wikipedia.org/wiki/Domiduca))
+
+## What I've had on rotation
+
+- **Something New**: _Fragments_, by Bear's Den and Paul Frith (Acoustic Folk Pop). This is such a gentle album, containing fully instrumental/acoustic remakes of their own songs, from across a number of their own albums. It's a great early autumn playlist to sit inside with, to read to, and to take the pressure out of an evening with. ([links](https://songwhip.com/bears-den/fragments))
+- **Something Old** _Blink 182_ by Blink 182 (Pop Punk). I rediscovered this album on a bike ride I took earlier this week, in possibly the last of our summer sun. It was one of the first CDs I ever got, and the words to pretty much every song have been burned into somewhere deep in my brain. The pop-punk energy, distinct vocals, and general teenage melancholy make this a great album all round, if we're being honest. ([links](https://songwhip.com/blink-182/blink-182))
+
+## Cool Articles
+
+- [Mark in the Middle](https://www.theverge.com/21444203/facebook-leaked-audio-zuckerberg-trump-pandemic-blm) by Casey Newton for _The Verge_. This is a great bit of reporting on both Facebook and Mark Zuckerberg's approach to leadership and management. Zuck is a man who appears increasingly out of touch with human and social sentiments that make up a lot of the human experience. The article also highlights some wider tensions around Facebook which I had never previously considered, for example that Facebook employees are largely left-leaning but its customer base is increasingly right-wing; and how Facebook sells its mission to its employees as a democratising force for opportunity and connection for all. Ultimately, however, management within the company seems to continue to ignore the damaging consequences of providing a platform, and even amplifying voices, of hate speech and conspiracy theorists. The recordings in this article are also tightly integrated, and I love the design of the piece as a whole.
+- [After 15 Years as a Product Leader, CEO and Now VC, Here’s the Advice I Always Share with Future Founders](https://firstround.com/review/after-15-years-as-a-product-leader-ceo-and-now-vc-heres-the-advice-i-always-share-with-future-founders/) on the _First Round_ blog. This is a nice reminder of the importance of always staying product and experience focused, accepting nothing less than what you envisioned. Even as products and teams grow (or bloat), these shouldn't slip (but pretty much always will). There's definitely some gems in there, but not every company can afford Google levels of financial, time, and mental resources. I don't think anyone can just stop everything and only ship excellence (as much as we all want to say we can and do).

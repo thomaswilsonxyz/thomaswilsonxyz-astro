@@ -1,0 +1,58 @@
+---
+export function getStaticPaths() {
+    const allBlogPosts = Astro.fetchContent('../../content/blog/*.md');
+    return allBlogPosts.map((post) => {
+
+        return {
+            props: {...post},
+            params: { slug: post.slug },
+        }
+        
+    })
+}
+
+import { Markdown } from 'astro/components';
+import BaseHead from '../../components/BaseHead.astro'
+
+const { title, author, draft, date, tags, slug, astro, ...props} = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={'description'} permalink={'permalink'} /> 
+    
+    <link rel="stylesheet" href='/assets/global.css' />
+  </head>
+
+  <body class="px-6 md:px-0 pb-4">
+      <header class="flex w-full flex-col items-center pt-4 pb-8">
+        <div class="text-center pb-2">
+          <a
+            href="/"
+            class="text-lg underline"
+            style="color: var(--colour-brand)"
+            >{author}</a
+          >
+          <p class="publish-date">
+            {Intl.DateTimeFormat().format(new Date(date))}
+          </p>
+        </div>
+        <h1 class="text-6xl text-center" style="max-width: 15ch">{title}</h1>
+      </header>
+    <div class="flex flex-col items-center w-full pb-4">
+      <article class="max-w-prose text-lg space-y-2">
+        <Markdown content={astro.source} />
+      </article>
+      <span  class='w-full max-w-prose border-b-2 border-b-gray-500 h-2 py-2 block'/>
+      <p class='text-lg flex grow align-left max-w-prose w-full pt-2 '>
+        Like what you just read? 
+        <a href='/blog' class='underline inline-block ml-1'  style='color: var(--colour-brand);'> See all my writing</a>
+      </p>
+      
+    </div>
+  </body>
+</html>
+
+
+
+

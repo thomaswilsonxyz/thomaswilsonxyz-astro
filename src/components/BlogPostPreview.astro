@@ -1,0 +1,43 @@
+---
+export interface Props {
+  post: {
+    date: Date, 
+    book_review?: boolean 
+  }
+}
+
+const { post } = Astro.props;
+
+const makeUrl = (post) => {
+  if (post.book_review) {
+    return `/book-reviews/${post.slug}`
+  }
+
+   return `/blog/${post.slug}`
+}
+
+const makeTitle = (post) => {
+  if (post.book_review) {
+    return `📖 ${post.title}`;
+  }
+
+   return post.title;
+}
+
+
+---
+
+
+<li>
+  <article class="p-2 border rounded hover:shadow-md" >
+    <header>
+      <a class="text-md" href={makeUrl(post)}>
+        {makeTitle(post)}
+      </a>
+      <p class="text-gray-500 text-sm">{Intl.DateTimeFormat().format(new Date(post.date))}</p>
+    </header>
+    <a class="text-blue-500 underline" href={`/blog/${post.slug}`}>Read</a>
+  </article>
+</li>
+
+

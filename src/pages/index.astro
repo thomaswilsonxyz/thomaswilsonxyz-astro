@@ -1,0 +1,90 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import BlogHeader from '../components/BlogHeader.astro';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+interface MarkdownFrontmatter {
+  date: number;
+}
+
+interface BookReviewMarkdownFrontmatter {
+date: number;
+}
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Thomas Wilson';
+let description = 'Thomas Wilson is building software and engineering teams with socially responsible companies';
+let permalink = 'https://www.thomaswilson.xyz';
+
+// Data Fetching: List all Markdown posts in the repo.
+
+// let allBlogPosts = Astro.fetchContent<MarkdownFrontmatter>('./blog/*.md');
+
+let allContent = Astro.fetchContent<BookReviewMarkdownFrontmatter>('../content/**/*.md');
+
+// allBlogPosts = allBlogPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()).slice(0, 10);
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+<html lang="en" class='font-sans'>
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')} >
+    <link rel="stylesheet" href={Astro.resolve('../styles/inter.css')} >
+    
+
+    <style>
+      #oxwash {
+          background: -webkit-linear-gradient(-45deg, #2F28AF, #6FBBEC);
+          border-image-slice: 1;
+          border-bottom: 2px solid;
+          border-image-source: -webkit-linear-gradient(-45deg, #2F28AF, #6FBBEC);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+      }
+
+      .color-brand-orange {
+        color:#ff8c0d
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid place-content-center">
+      <main class="max-w-2xl">
+        <section class="py-8 flex flex-col gap-y-4">
+          <h1 class="text-2xl font-medium color-brand-orange">{title}</h1>
+          <p class="text-3xl font-light">Hi, I build software<sup class="color-brand-orange"><a href="#footnote-1">1</a></sup> and engineering teams with socially responsible<sup class="color-brand-orange"><a href="#footnote-2">2</a></sup> companies.</p>
+          <ul class='list-disc text-lg pl-4 space-y-1 leading-relaxed text-gray-700 pt-2'>
+            <li>At the moment I'm leading software engineering at <a id="oxwash" href="https://www.oxwash.com">Oxwash</a>, we're building the sustainable and scalable future of laundry.  </li>
+            <li>I've worked in Ed Tech and Data Privacy, and I have Ph.D. in Education Technology.</li>
+            <li>I try to write at least once a month on my <a href="/blog" class="underline color-brand-orange")">Blog</a></li>
+            <li>I like good food and dry gin, long bike rides in the sun, well-written books, and lists.</li>
+          </ul>
+          
+          <div class="flex flex-col -gap-y-1 py-4">
+            <p id="footnote-1" class="text-md pt-2 text-gray-500"><span class="color-brand-orange pr-1">1</span>I build software for the web, mostly with TypeScript.  I used to be a UI engineer, now I'm more full stack.</p>
+            <p id="footnote-2" class="text-md pt-2 text-gray-500"><span class="color-brand-orange pr-1">2</span>Companies working to solve systemic problems or inequality in environmental, social, healthcare, or education.</p>
+          </div>
+          
+        </section>
+        <section aria-label="Blog post list">
+        <div class="pb-2">
+          <h2 class="text-2xl pb-1 inline">Recent writing</h2>
+          <a href="/blog" class="underline pt-4 inline">Read all</a>
+        </div>
+          <ul class="space-y-2">
+            {allContent.map(p => <BlogPostPreview post={p} />)}
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
