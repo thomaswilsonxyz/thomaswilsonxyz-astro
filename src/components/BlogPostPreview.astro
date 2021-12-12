@@ -29,14 +29,14 @@ const makeTitle = (post) => {
 
 
 <li>
-  <article class="p-2 border rounded hover:shadow-md" >
+  <article class="p-2 border rounded border-gray-200 hover:shadow-md" >
     <header>
       <a class="text-md" href={makeUrl(post)}>
         {makeTitle(post)}
       </a>
       <p class="text-gray-500 text-sm">{Intl.DateTimeFormat().format(new Date(post.date))}</p>
     </header>
-    <a class="text-blue-500 underline" href={`/blog/${post.slug}`}>Read</a>
+    <a class="text-blue-600 underline" href={`/blog/${post.slug}`}>Read</a>
   </article>
 </li>
 
