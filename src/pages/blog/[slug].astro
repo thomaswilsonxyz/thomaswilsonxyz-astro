@@ -21,7 +21,9 @@ const { title, author, draft, date, tags, slug, astro, ...props} = Astro.props
   <head>
     <BaseHead title={title} description={'description'} permalink={'permalink'} /> 
     
-    <link rel="stylesheet" href='/assets/global.css' />
+    <link rel="stylesheet" href={Astro.resolve('../../styles/global.css')} >
+    <link rel="stylesheet" href={Astro.resolve('../../styles/inter.css')} >
+    <link rel="stylesheet" href={Astro.resolve('../../styles/blog.css')} >
   </head>
 
   <body class="px-6 md:px-0 pb-4">
@@ -40,7 +42,7 @@ const { title, author, draft, date, tags, slug, astro, ...props} = Astro.props
         <h1 class="text-6xl text-center" style="max-width: 15ch">{title}</h1>
       </header>
     <div class="flex flex-col items-center w-full pb-4">
-      <article class="max-w-prose text-lg space-y-2">
+      <article id="blog-article" class="max-w-prose text-lg space-y-2">
         <Markdown content={astro.source} />
       </article>
       <span  class='w-full max-w-prose border-b-2 border-b-gray-500 h-2 py-2 block'/>

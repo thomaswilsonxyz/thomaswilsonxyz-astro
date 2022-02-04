@@ -16,6 +16,8 @@ import BaseHead from '../../components/BaseHead.astro'
 const { title, author, draft, date, tags, slug, astro, ...props} = Astro.props
 ---
 
+
+
 <html lang='en'>
     <head>
         <link rel="stylesheet" href={Astro.resolve('../../styles/global.css')} >
@@ -43,7 +45,7 @@ const { title, author, draft, date, tags, slug, astro, ...props} = Astro.props
       </header>
     </div>
     <div class="flex justify-center w-full pb-4">
-      <article class="max-w-prose text-lg space-y-2">
+      <article id="blog-article" class="max-w-prose text-lg space-y-2">
         <Markdown content={astro.source} />
       </article>
       <span  class='w-full max-w-prose border-b-2 border-b-gray-500 h-2 py-2 block'/>
