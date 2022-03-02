@@ -45,6 +45,45 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
           -webkit-text-fill-color: transparent;
       }
 
+      #strapline {
+        font-size: 2.55rem;
+        line-height: 115%;
+        
+      }
+
+      #bio-list {
+        font-size: 1.44rem;
+        line-height: 120%;
+        font-weight: 300;
+      }
+
+      .super {
+        position: fixed;
+        animation-name: floating;
+        animation-duration: 5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+      }
+
+      .super-two {
+        position: fixed;
+        animation-name: floating;
+        animation-delay: 1s;
+        animation-duration: 6.5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes floating {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(3px);
+        }
+
+      }
+
       .color-brand-orange {
         color:#ff8c0d
       }
@@ -56,8 +95,8 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
       <main class="max-w-2xl">
         <section class="py-4 sm:py-8 flex flex-col gap-y-1 sm:gap-y-4">
           <h1 class="text-lg sm:text-2xl font-medium color-brand-orange">{title}</h1>
-          <p class="text-3xl sm:text-3xl font-light">Hi, I build software<sup class="color-brand-orange text-md sm:text-lg"><a href="#footnote-1">*</a></sup> and lead engineering teams with socially responsible<sup class="color-brand-orange text-sm md:text-md"><a href="#footnote-2">†</a></sup> companies.</p>
-          <ul class='list-disc text-md sm:text-lg pl-4 space-y-1 leading-relaxed text-gray-700 pt-2'>
+          <p id="strapline" class="font-light">Hi, I build web software<span class="super color-brand-orange text-md sm:text-lg"><a href="#footnote-1">*</a></span> and lead engineering teams with socially responsible<span class="super-two color-brand-orange text-sm md:text-md"><a href="#footnote-2">†</a></span> companies.</p>
+          <ul id="bio-list" class='list-disc text-md sm:text-lg pl-4 space-y-1 leading-relaxed text-gray-700 pt-2'>
             <li>Right now I'm leading software engineering at <a id="oxwash" href="https://www.oxwash.com">Oxwash</a>, we're building the sustainable and scalable future of laundry.  </li>
             <li>I've worked in Education and Data Privacy, and I have Ph.D. in Education Technology.</li>
             <li>I try to write at least once a month on my <a href="/blog" class="underline color-brand-orange">Blog</a></li>
