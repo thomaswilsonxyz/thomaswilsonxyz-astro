@@ -31,63 +31,83 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
+
+<style lang="css">
+    #oxwash {
+        background: -webkit-linear-gradient(-45deg, #2F28AF, #6FBBEC);
+        border-image-slice: 1;
+        border-bottom: 2px solid;
+        border-image-source: -webkit-linear-gradient(-45deg, #2F28AF, #6FBBEC);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #strapline {
+      font-size: 2.55rem;
+      line-height: 115%;
+      
+    }
+
+    #bio-list {
+      font-size: 1.44rem;
+      line-height: 120%;
+      font-weight: 300;
+    }
+
+    .super {
+      position: absolute;
+      animation-name: floating;
+      animation-duration: 5s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+    }
+
+    .super-two {
+      position: absolute;
+      animation-name: floating;
+      animation-delay: 1s;
+      animation-duration: 6.5s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+    }
+
+    .recent-writing {
+      display: grid; 
+      grid-template-columns: 1fr max-content;
+    }
+
+    .recent-writing__title {
+      font-size: var(--font-size-200);
+    }
+
+    .recent-writing__link {
+      font-size: var(--font-size-100);
+      display: flex; 
+      align-items: center;
+      text-decoration: underline;
+      color: var(--tw-orange);
+    }
+
+    @keyframes floating {
+      0% {
+          transform: translateY(0px);
+      }
+      50% {
+          transform: translateY(3px);
+      }
+
+    }
+
+    .color-brand-orange {
+      color:#ff8c0d
+    }
+</style>
+
 <html lang="en" class='font-sans'>
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
 
-    <style>
-      #oxwash {
-          background: -webkit-linear-gradient(-45deg, #2F28AF, #6FBBEC);
-          border-image-slice: 1;
-          border-bottom: 2px solid;
-          border-image-source: -webkit-linear-gradient(-45deg, #2F28AF, #6FBBEC);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-      }
-
-      #strapline {
-        font-size: 2.55rem;
-        line-height: 115%;
-        
-      }
-
-      #bio-list {
-        font-size: 1.44rem;
-        line-height: 120%;
-        font-weight: 300;
-      }
-
-      .super {
-        position: absolute;
-        animation-name: floating;
-        animation-duration: 5s;
-        animation-timing-function: ease-in;
-        animation-iteration-count: infinite;
-      }
-
-      .super-two {
-        position: absolute;
-        animation-name: floating;
-        animation-delay: 1s;
-        animation-duration: 6.5s;
-        animation-timing-function: ease-in;
-        animation-iteration-count: infinite;
-      }
-
-      @keyframes floating {
-        0% {
-            transform: translateY(0px);
-        }
-        50% {
-            transform: translateY(3px);
-        }
-
-      }
-
-      .color-brand-orange {
-        color:#ff8c0d
-      }
-    </style>
+    
   </head>
 
   <body class="px-3 sm:px-2">
@@ -110,11 +130,11 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
           
         </section>
         <section aria-label="Blog post list">
-        <div class="pb-2">
-          <h2 class="text-2xl pb-1 inline">Recent writing</h2>
-          <a href="/blog" class="underline pt-4 inline">Read all</a>
+        <div class="recent-writing">
+          <h2 class="recent-writing__title">Recent writing</h2>
+          <a href="/blog" class="recent-writing__link">Read all</a>
         </div>
-          <ul class="space-y-2">
+          <ul id="recent-posts" class="space-y-2">
             {allContent.map(p => <BlogPostPreview post={p} />)}
           </ul>
         </section>

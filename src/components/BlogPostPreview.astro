@@ -23,21 +23,38 @@ const makeTitle = (post) => {
 
    return post.title;
 }
-
-
 ---
+
+<style>
+  .preview {
+    border: 1px solid var(--grey-200);
+    padding: var(--space-200);
+    border-radius: var(--border-radius-100);
+    display: flex;
+    flex-flow: column;
+    transform: scale(1);
+    transition: transform 0.1s;
+  }
+
+  .preview:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s;
+  }
+
+  .preview__title {
+    font-size: var(--font-size-100);
+  }
+</style>
 
 
 <li>
-  <article class="p-2 border rounded border-gray-200 hover:shadow-md" >
-    <header>
-      <a class="text-md" href={makeUrl(post)}>
-        {makeTitle(post)}
-      </a>
-      <p class="text-gray-500 text-sm">{Intl.DateTimeFormat().format(new Date(post.date))}</p>
-    </header>
-    <a class="text-blue-600 underline" href={`/blog/${post.slug}`}>Read</a>
-  </article>
+  <a href={makeUrl(post)} class="preview hover:shadow-md" >
+    <h2 class="preview__title" >
+      {makeTitle(post)}
+    </a>
+    <p class="text-gray-500 text-sm">{Intl.DateTimeFormat().format(new Date(post.date))}</p>
+    
+  </a>
 </li>
 
 
