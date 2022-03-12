@@ -1,0 +1,47 @@
+---
+export interface Props {
+  imageSrc: string;
+  text: string
+  children: any
+}
+
+const { imageSrc, text, children } = Astro.props;
+Astro.slots
+---
+
+<style lang="css">
+    .bio-list-item {
+        font-size: var(--font-size-100);
+        line-height: 125%;
+        display: grid; 
+        grid-template-columns: 50px 1fr;
+        border: 1px solid var(--grey-300);
+        border-radius: var(--border-radius-100);
+        padding: var(--base-px);
+    }
+
+    .art {
+        display: flex; 
+        align-items: center;
+    }
+
+    .image {
+        height: 40px;
+    }
+
+    .text {
+        color: var(--grey-800);
+        align-items: center;
+    }
+
+</style>
+
+<li class="bio-list-item">
+    <div class="art">
+        <img class="image" src={imageSrc} />
+    </div>
+
+    <div class="text">
+        <slot />
+    </div>
+</li>

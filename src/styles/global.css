@@ -18,11 +18,12 @@
     --font-size-100: 1rem;
     --font-size-200: 1.5rem;
     --font-size-300: 2.25rem;
-    --font-size-400: 3.375re;
+    --font-size-400: 3.375rem;
     --space-100: 8px;
     --space-200: 16px;
     --space-300: 24px;
     --space-400: 32px;
     --space-500: 40px;
     --border-radius-100: 8px;
+    --base-px: 12px;
 }

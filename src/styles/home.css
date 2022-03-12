@@ -1,0 +1,94 @@
+#oxwash {
+    display: inline;
+    background: -webkit-linear-gradient(-45deg, #2F28AF, #6FBBEC);
+    border-image-source: -webkit-linear-gradient(-45deg, #2F28AF, #6FBBEC);
+    border-image-slice: 1;
+    border-bottom: 2px solid;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.super {
+  position: absolute;
+  animation-name: floating;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.super-two {
+  position: absolute;
+  animation-name: floating;
+  animation-delay: 1s;
+  animation-duration: 6.5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.home__bio {
+    padding: calc(2 * var(--base-px));
+    display: flex; 
+    flex-flow: column;
+    gap: var(--base-px);
+    padding-bottom: calc(4 * var(--base-px));
+}
+
+.bio__title {
+    font-size: var(--font-size-100);
+    font-weight: 400;
+    color: var(--tw-orange);
+}
+
+.bio__strapline {
+    font-size: var(--font-size-300);
+    line-height: 115%;
+    font-weight:300;
+}
+
+.bio__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--base-px);
+    font-size: var(--font-size-200);
+    line-height: 150%;
+    font-weight: 300;
+    list-style: disc;
+    color: var(--grey-800);
+    padding-top: var(--base-px);
+}
+
+.footnote-text {
+    color: var(--grey-600);
+    font-weight: 300;
+    font-size: var(--font-size-100);
+}
+
+.recent-writing {
+  display: grid; 
+  grid-template-columns: 1fr max-content;
+}
+
+.recent-writing__title {
+  font-size: var(--font-size-200);
+}
+
+.recent-writing__link {
+  font-size: var(--font-size-100);
+  display: flex; 
+  align-items: center;
+  text-decoration: underline;
+  color: var(--tw-orange);
+}
+
+@keyframes floating {
+  0% {
+      transform: translateY(0px);
+  }
+  50% {
+      transform: translateY(3px);
+  }
+}
+
+.color-brand-orange {
+  color:#ff8c0d
+}
