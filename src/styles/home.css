@@ -33,29 +33,6 @@
     padding-bottom: calc(4 * var(--base-px));
 }
 
-.bio__title {
-    font-size: var(--font-size-100);
-    font-weight: 400;
-    color: var(--tw-orange);
-}
-
-.bio__strapline {
-    font-size: var(--font-size-300);
-    line-height: 115%;
-    font-weight:300;
-}
-
-.bio__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: var(--base-px);
-    font-size: var(--font-size-200);
-    line-height: 150%;
-    font-weight: 300;
-    list-style: disc;
-    color: var(--grey-800);
-    padding-top: var(--base-px);
-}
 
 .footnote-text {
     color: var(--grey-600);
@@ -63,16 +40,17 @@
     font-size: var(--font-size-100);
 }
 
-.recent-writing {
+
+.recent-writing-header {
   display: grid; 
   grid-template-columns: 1fr max-content;
 }
 
-.recent-writing__title {
+.recent-writing-header__title {
   font-size: var(--font-size-200);
 }
 
-.recent-writing__link {
+.recent-writing-header__link {
   font-size: var(--font-size-100);
   display: flex; 
   align-items: center;

@@ -33,6 +33,50 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
+<style>
+
+.bio__title {
+    font-size: var(--font-size-100);
+    font-weight: 400;
+    color: var(--tw-orange);
+}
+
+  .bio__strapline {
+      font-size: var(--font-size-300);
+      line-height: 115%;
+      font-weight:300;
+  }
+
+  .bio__list {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: var(--base-px);
+      font-size: var(--font-size-200);
+      line-height: 150%;
+      font-weight: 300;
+      list-style: disc;
+      color: var(--grey-800);
+      padding: calc(2 * var(--base-px)) 0;
+  }
+
+  .recent-posts {
+    border: 2px solid var(--tw-orange);
+    border-radius: var(--border-radius-100);
+    padding: var(--base-px);
+    margin-bottom: calc(2 * var(--base-px));
+  }
+
+  .recent-writing-header__title {
+    padding-bottom: var(--base-px);
+  }
+
+  .recent-posts__list { 
+    display: grid; 
+    gap: calc(2 * var(--base-px));
+    grid-template-columns: 1fr;
+  }
+</style>
+
 
 
 <html lang="en" class='font-sans'>
@@ -46,13 +90,13 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
       <main class="max-w-2xl">
         <section class="home__bio">
           <h1 class="bio__title">{title}</h1>
-          <p class="bio__strapline">Hi, I build web software and lead engineering teams with socially responsible<span class="color-brand-orange text-sm md:text-md"><a class="super-two"href="#footnote-2">†</a></span> companies.</p>
+          <p class="bio__strapline">Hi, I build software and lead engineering teams with socially responsible<span class="color-brand-orange text-sm md:text-md"><a class="super-two"href="#footnote-2">†</a></span> companies.</p>
           <ul class="bio__list">
             <BioListItem imageSrc='/assets/images/oxwash.svg' >
               Right now I'm leading software engineering at <a id="oxwash" href="https://www.oxwash.com">Oxwash</a>, we're building the sustainable and scalable future of laundry.  
             </BioListItem>
 
-            <BioListItem imageSrc='/assets/images/layout.svg'>
+            <BioListItem imageSrc='/assets/images/laptop.svg'>
               I'm a software engineer who likes to build products people don't hate to use.  I've done that in Education and Data Privacy, and I have Ph.D. in Education Technology.
             </BioListItem>
 
@@ -67,20 +111,26 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
           </ul>
           
           <div class="flex flex-col">
-            <p id="footnote-2" class="footnote-text"><span class="color-brand-orange pr-1">†</span>Companies working to solve systemic problems or inequality in environmental, social, healthcare, or education.</p>
+            <p id="footnote-2" class="footnote-text"><span class="color-brand-orange pr-1">†</span>Companies working directly on environmental, social, healthcare, or education problems.</p>
           </div>
           
         </section>
-        <section aria-label="Blog post list">
-        <div class="recent-writing">
-          <h2 class="recent-writing__title">Recent writing</h2>
-          <a href="/blog" class="recent-writing__link">Read all</a>
+        <section aria-label="Blog post list" class="recent-posts">
+        <div class="recent-writing-header">
+          <h2 class="recent-writing-header__title">Recent writing</h2>
+          <a href="/blog" class="recent-writing-header__link">Read all</a>
         </div>
-          <ul id="recent-posts" class="space-y-2">
+        <div >
+          <ul class="recent-posts__list">
             {allContent.map(p => <BlogPostPreview post={p} />)}
+            <li>
+            <a href="/blog" class="recent-writing-header__link">There's more</a></li>
           </ul>
+
+          </div>
         </section>
       </main>
+      
     </div>
   </body>
 </html>

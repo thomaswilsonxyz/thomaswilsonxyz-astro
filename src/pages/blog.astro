@@ -43,7 +43,7 @@ allContent = allContent.sort((a, b) => new Date(b.date).valueOf() - new Date(a.d
         </section>
         <section aria-label="Blog post list">
           <h2 class="text-xl pb-1">All Writing</h2>
-          <ul class="space-y-2">
+          <ul class="space-y-4">
             {allContent.map(p => <BlogPostPreview post={p} />)}
           </ul>
         </section>

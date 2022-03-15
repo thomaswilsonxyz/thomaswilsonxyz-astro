@@ -1,4 +1,5 @@
 ---
+import { Markdown } from 'astro/components'
 export interface Props {
   post: {
     date: Date, 
@@ -23,37 +24,68 @@ const makeTitle = (post) => {
 
    return post.title;
 }
+
+const makePreview = (post) => {
+  if (post.astro.source) {
+    const words = post.astro.source.split(' ').filter(c => c !== '\n').slice(0,30).join(' ').replace('\n', '')
+    return `${words}...`
+  }
+
+  return ``
+}
 ---
 
 <style>
   .preview {
-    border: 1px solid var(--grey-200);
-    padding: var(--space-200);
     border-radius: var(--border-radius-100);
     display: flex;
     flex-flow: column;
     transform: scale(1);
     transition: transform 0.1s;
+
+    --date-colour: var(--grey-500);
   }
 
   .preview:hover {
     transform: scale(1.03);
     transition: transform 0.2s;
+    background-color: var(--tw-orange);
+    color: white;
+    padding: var(--base-px);
+
+    --date-colour: white;
   }
 
-  .preview__title {
+  .date { 
+    color: var(--date-colour);
     font-size: var(--font-size-100);
   }
+
+
+  .title {
+    font-size: var(--font-size-150);
+  }
+
+  .exerpt {
+    font-size: var(--font-size-100);
+    color: var(--date-colour);
+  }
+
+  
 </style>
 
 
 <li>
-  <a href={makeUrl(post)} class="preview hover:shadow-md" >
-    <h2 class="preview__title" >
+  <a href={makeUrl(post)} class="preview" >
+    <h3 class="title" >
       {makeTitle(post)}
     </a>
-    <p class="text-gray-500 text-sm">{Intl.DateTimeFormat().format(new Date(post.date))}</p>
+    <p class="date ">{Intl.DateTimeFormat().format(new Date(post.date))}</p>
+    <p class="exerpt">
+    <Markdown content={makePreview(post)} />
+      
     
+    </p>
   </a>
 </li>
 

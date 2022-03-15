@@ -1,5 +1,5 @@
 ---
-title: "Atomic Habits is a really good book"
+title: "📖 Atomic Habits is a really good book"
 author: "Thomas Wilson"
 date: 2022-02-22T20:56:00
 slug: "2022-02-22-atomic-habits-is-a-really-good-book"
@@ -12,7 +12,7 @@ My nine journaling prompts for other CEOs and founders
 
 One rule for flawless interviews.
 
----
+[and so on]
 
 Habit hacks are catnip to a certain kind of self-improvement/business-guru people.  I actually got pretty involved in these kinds of articles earlier in my career, so it'd be wrong for me to judge.
 
