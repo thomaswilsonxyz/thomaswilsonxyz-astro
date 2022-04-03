@@ -3,29 +3,33 @@
 @tailwind utilities;
 
 :root {
-    --tw-orange: #ff8c0d;
-    --grey-50:  #f9fafb;
-    --grey-100: #f4f5f7;
-    --grey-200: #e5e7eb;
-    --grey-300: #d2d6dc;
-    --grey-400: #9fa6b2;
-    --grey-500: #6b7280;
-    --grey-600: #4b5563;
-    --grey-700: #374151;
-    --grey-800: #252f3f;
-    --grey-900: #161e2e;
-    --font-size-050: 0.667rem;
-    --font-size-100: 1rem;
-    --font-size-125: 1.15rem;
-    --font-size-150: 1.25rem;
-    --font-size-200: 1.5rem;
-    --font-size-300: 2.25rem;
-    --font-size-400: 3.375rem;
-    --space-100: 8px;
-    --space-200: 16px;
-    --space-300: 24px;
-    --space-400: 32px;
-    --space-500: 40px;
-    --border-radius-100: 8px;
-    --base-px: 12px;
+  --tw-orange: #ff8c0d;
+  --grey-50: #f9fafb;
+  --grey-100: #f4f5f7;
+  --grey-200: #e5e7eb;
+  --grey-300: #d2d6dc;
+  --grey-400: #9fa6b2;
+  --grey-500: #6b7280;
+  --grey-600: #4b5563;
+  --grey-700: #374151;
+  --grey-800: #252f3f;
+  --grey-900: #161e2e;
+  --font-size-050: 0.667rem;
+  --font-size-100: 1rem;
+  --font-size-125: 1.15rem;
+  --font-size-150: 1.25rem;
+  --font-size-200: 1.5rem;
+  --font-size-300: 2.25rem;
+  --font-size-400: 3.375rem;
+  --space-100: 8px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --border-radius-100: 8px;
+  --base-px: 12px;
+}
+
+h1 {
+  font-size: var(--font-size(400));
 }

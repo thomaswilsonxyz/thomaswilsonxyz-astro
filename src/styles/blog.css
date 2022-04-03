@@ -1,24 +1,56 @@
-#blog-article h2 {
-    font-size: 1.6rem;
-    padding: 0.75rem 0 0.2rem 0;
+#blog-article p {
+  font-size: 1em;
+  line-height: 1.65em;
+  color: var(--grey-800);
+  padding-bottom: var(--base-px);
+}
+
+#blog-articles p:has(+ ul) {
+  padding-bottom: 0;
+}
+
+#blog-article h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  color: var(--grey-900);
+  padding-top: var(--base-px);
+  padding-bottom: calc(var(--base-px) / 2);
+}
+
+#blog-article h1 {
+  font-size: var(--font-size-400);
 }
 
 #blog-article h2 {
-
+  font-size: var(--font-size-300);
 }
 
-#blog-article ol {
-    list-style: decimal;
-    padding-left: 24px;
-    padding-bottom: 8px;
+#blog-article h3 {
+  font-size: var(--font-size-200);
 }
+
+#blog-article ol,
+ul {
+  list-style: decimal;
+  padding-left: calc(2 * var(--base-px));
+  padding-bottom: var(--base-px);
+}
+
+#blog-article li {
+  padding-bottom: calc(var(--base-px) / 2);
+  padding-left: calc(var(--base-px) / 2);
+}
+
 #blog-article ul {
-    list-style: disc;
-    padding-left: 24px;
-    padding-bottom: 8px;
+  list-style: disc;
 }
 
 #blog-article a {
-    text-decoration: underline;
-    color: var(--tw-orange);
+  text-decoration: underline;
+  color: var(--tw-orange);
 }
